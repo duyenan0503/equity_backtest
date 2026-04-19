@@ -95,7 +95,7 @@ if (isEngulfing(row) == 2 or isStar(row) == 2) and closeSupport(row, ss):
 
 **closeResistance**: The current bar's high must be within 1.0 × ATR of the nearest resistance level, and the candle body must remain below the resistance.
 
-**`closeSupport`**: The current bar's low must be within 1.5 × ATR of the nearest support level, and the candle body must remain above the support.
+**closeSupport**: The current bar's low must be within 1.5 × ATR of the nearest support level, and the candle body must remain above the support.
 
 
 **4. Execution Rules**
