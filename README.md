@@ -120,7 +120,7 @@ Trades are executed at market open the candle **after** the signal fires. No pyr
 **5.1. What Works**
 
 * Positive Profit Factor (1.61): For every $1 lost, the strategy recovers $1.61 in gains. This is above the breakeven threshold of 1.0 and within a reasonable range for a trend-following reversal system
-* 50% Win Rate: With a 1:1.5 R:R ratio, breakeven only requires around 40% win rate. Achieving 50% means the strategy has a positive edge per trade
+* 50% Win Rate: With a 1:1.5 Risk:Reward ratio, breakeven only requires around 40% win rate. Achieving 50% means the strategy has a positive edge per trade
 * Near-zero beta (0.002): The strategy remains largely market-neutral, generating returns independently of AAPL's broad directional move
 
 **5.2. What Still Needs Work**
