@@ -52,9 +52,9 @@ Pivot-based S/R levels are identified using a **swing high / swing low** approac
 
 **Support** (ss): A candle whose `low` is a local minimum - each preceding candle has a lower low than its successor, and each following candle has a higher low than its predecessor (strict V-shape bottom).
 
-**Resistance** (rr): A candle whose `high` is a local maximum - an inverted V-shape (Λ-shape top).
+**Resistance** (rr): A candle whose `high` is a local maximum - an inverted V-shape.
 
-For every signal bar, the strategy collects all active support prices and resistance prices from the prior `backCandles` window.
+For every signal bar, the strategy collects all active support prices and resistance prices from the prior backCandles window.
 
 
 **2.3: Candlestick Pattern Detection**
@@ -97,12 +97,10 @@ if (isEngulfing(row) == 2 or isStar(row) == 2) and closeSupport(row, ss):
 
 **`closeSupport`**: The current bar's low must be within 1.5 × ATR of the nearest support level, and the candle body must remain above the support.
 
-**Note:** The current implementation has a fallback condition (or len(rr) >= 1) that triggers a sell signal whenever any resistance level exists in the lookback window, regardless of proximity. This unintentionally loosens the resistance filter.
-
 
 **4. Execution Rules**
 
-Trades are executed at market open the candle **after** the signal fires. No pyramiding — a new position is only opened when flat (`not self.position`).
+Trades are executed at market open the candle **after** the signal fires. No pyramiding — a new position is only opened when flat (not self.position).
 
 - **Entry:** Market order (both directions)
 - **Stop-Loss (Long):** Close - 1.0 × ATR
@@ -112,11 +110,26 @@ Trades are executed at market open the candle **after** the signal fires. No pyr
 - **Risk:Reward Ratio:** 1 : 1.5
 
 
-## Performance Evaluation
-<img width="365" height="799" alt="image" src="https://github.com/user-attachments/assets/31bf0fa3-6f03-4ced-9fdb-edede31b5047" />
+**5. Performance Evaluation**
+   
+<img width="430" height="707" alt="image" src="https://github.com/user-attachments/assets/476c31f3-3d04-4753-852f-112d9990f282" /> <img width="431" height="319" alt="image" src="https://github.com/user-attachments/assets/14305776-f6ce-44a8-8ab4-6e75e279e082" />
 
-<img width="1531" height="562" alt="image" src="https://github.com/user-attachments/assets/e36f7c74-a1ac-4040-97f9-05141ec5b13f" />
+<img width="1706" height="659" alt="image" src="https://github.com/user-attachments/assets/aa4d8fa3-1ea7-4b59-ae11-90eb635a9919" />
 
+**5.1. What Works**
 
-### What Works
- and research purposes only**. Past backtest performance does not guarantee future results. This is not financial advice.
+* Positive Profit Factor (1.61): For every $1 lost, the strategy recovers $1.61 in gains. This is above the breakeven threshold of 1.0 and within a reasonable range for a trend-following reversal system
+* 50% Win Rate: With a 1:1.5 R:R ratio, breakeven only requires around 40% win rate. Achieving 50% means the strategy has a positive edge per trade
+* Near-zero beta (0.002): The strategy remains largely market-neutral, generating returns independently of AAPL's broad directional move
+
+**5.2. What Still Needs Work**
+
+* Very low signal frequency: Only 3 signals were generated across 271 trading days, resulting in just 2 executed trades. This is statistically too thin to draw reliable conclusions.
+* Still significantly underperforms Buy & Hold: +1.00% vs +20.95% means the strategy is leaving most of the available return on the table. 
+* Small sample size distorts all metrics: With only 2 trades, every metric is highly sensitive to the outcome of a single trade. Results cannot be considered statistically significant
+
+**6. Conclusion**
+
+**Overall Rating**: Underperform - Work in Progress
+The strategy shows a conceptually valid idea executed too conservatively. Although it did turn profitable (+1.00%) and crossed several key thresholds: positive Profit Factor (1.61), positive Kelly Criterion (+0.18), and a 50% win rate, the overall verdict is still significantly underperformed. 
+
