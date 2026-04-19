@@ -132,5 +132,7 @@ Trades are executed at market open the candle **after** the signal fires. No pyr
 **6. Conclusion**
 
 **Overall Rating**: Underperform - Work in Progress
-The strategy shows a conceptually valid idea executed too conservatively. Although it did turn profitable (+1.00%) and crossed several key thresholds: positive Profit Factor (1.61), positive Kelly Criterion (+0.18), and a 50% win rate, the overall verdict is still significantly underperformed. 
+
+The strategy shows a conceptually valid idea executed too conservatively. 
+Although it did turn profitable (+1.00%) and crossed several key thresholds: positive Profit Factor (1.61), positive Kelly Criterion (+0.18), and a 50% win rate, the overall verdict is still significantly underperformed. 
 
