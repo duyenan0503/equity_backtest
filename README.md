@@ -2,22 +2,6 @@
 
 A technical analysis backtest that combines **Support/Resistance detection** with **candlestick reversal patterns** (Engulfing & Star formations) to generate buy/sell signals on Apple (AAPL) daily price data. Built with Python and the [`backtesting.py`](https://kernc.github.io/backtesting.py/) library.
 
----
-
-## Table of Contents
-
-- [Dataset](#dataset)
-- [Strategy Logic](#strategy-logic)
-- [Signal Generation Pipeline](#signal-generation-pipeline)
-- [Execution Rules](#execution-rules)
-- [Backtest Configuration](#backtest-configuration)
-- [Performance Results](#performance-results)
-- [Performance Evaluation](#performance-evaluation)
-- [Improvement Suggestions](#improvement-suggestions)
-- [Requirements](#requirements)
-- [Usage](#usage)
-
----
 
 ## Dataset
 
@@ -26,8 +10,6 @@ A technical analysis backtest that combines **Support/Resistance detection** wit
 - **Date Range:** March 17, 2025 – April 14, 2026
 - **Total Candles:** 271
 - **Source file:** `aapl_03152025_04152026.xlsx`
-
-Preprocessing removes zero-volume candles (non-trading days) and resets the index before any further computation.
 
 ---
 
