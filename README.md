@@ -112,7 +112,8 @@ Trades are executed at market open the candle **after** the signal fires. No pyr
 
 **5. Performance Evaluation**
    
-<img width="430" height="707" alt="image" src="https://github.com/user-attachments/assets/476c31f3-3d04-4753-852f-112d9990f282" /> <img width="431" height="319" alt="image" src="https://github.com/user-attachments/assets/14305776-f6ce-44a8-8ab4-6e75e279e082" />
+<img width="430" height="707" alt="image" src="https://github.com/user-attachments/assets/476c31f3-3d04-4753-852f-112d9990f282" /> <img width="421" height="355" alt="image" src="https://github.com/user-attachments/assets/d3709173-6806-4cec-973e-ecc4a86148ac" />
+
 
 <img width="1706" height="659" alt="image" src="https://github.com/user-attachments/assets/aa4d8fa3-1ea7-4b59-ae11-90eb635a9919" />
 
